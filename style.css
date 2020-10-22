@@ -1,5 +1,5 @@
 body{
-  background-color:black;
+  background-color: #181818; 
   margin:0; 
   padding:0; 
   height:100%;
@@ -27,6 +27,8 @@ body{
   text-align: center;
   background-color: #BEBEBE;
   box-shadow: 5px 10px 8px #888888;
+  border-radius: 25px;
+
 }
 
 .metronome{
@@ -35,4 +37,12 @@ body{
   height: 100%;
   width : 100%;
   position: fixed;
+}
+
+.circle{
+  height: 45px;
+  with: 90px;
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  background: white;
 }
