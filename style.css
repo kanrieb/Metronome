@@ -21,6 +21,7 @@ body{
 }
 
 .info-box{
+  font-family: 'Quicksand', sans-serif;
   margin: auto;
   width: 60%; 
   height: 400px;
@@ -41,8 +42,11 @@ body{
 
 .circle{
   height: 45px;
-  with: 90px;
-  border-bottom-left-radius: 90px;
-  border-bottom-right-radius: 90px;
+  width: 90px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
   background: white;
+  position: absolute;
+  bottom: 0px;
+  left: 20%;
 }
