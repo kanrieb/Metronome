@@ -1,3 +1,28 @@
 body{
   background-color:black;
 }
+
+.split{
+  height: 100%;
+  width: 50%
+  position: fixed;
+}
+
+.left{
+  left: 0;
+}
+
+.right{
+  right: 0;
+}
+
+.info-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 25 px;
+  height: 25px;
+  background-color: grey;
+}
