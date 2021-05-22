@@ -1,0 +1,52 @@
+body{
+  background-color: #181818; 
+  margin:0; 
+  padding:0; 
+  height:100%;
+}
+
+.left{
+  position:relative;
+  width: 50%;
+  float: left;
+  height: 100%;
+  padding: 110px 0;
+}
+
+.right{
+  position:relative;
+  width: 50%;
+  float: right;
+  height: 100%;
+}
+
+.info-box{
+  font-family: 'Quicksand', sans-serif;
+  margin: auto;
+  width: 60%; 
+  height: 400px;
+  text-align: center;
+  background-color: #BEBEBE;
+  box-shadow: 5px 10px 8px #888888;
+  border-radius: 25px;
+
+}
+
+.metronome{
+  background: rgb(22,79,126);
+  background: linear-gradient(90deg, rgba(22,79,126,1) 0%, rgba(88,226,255,1) 100%);
+  height: 100%;
+  width : 100%;
+  position: fixed;
+}
+
+.circle{
+  height: 45px;
+  width: 90px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  background: white;
+  position: absolute;
+  bottom: 0px;
+  left: 20%;
+}
