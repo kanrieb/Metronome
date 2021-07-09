@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Metronome.css';
-import click1 from './click1.wav';
-import click2 from './click2.wav';
+import tick from './Audio/Tick.mp3';
 
 class Metronome extends Component {
   constructor(props) {
@@ -14,15 +13,53 @@ class Metronome extends Component {
       beatsPerMeasure: 4
     };
 
-     // Create Audio objects with the files Webpack loaded,
-    // and we'll play them later.
-    this.click1 = new Audio(click1);
-    this.click2 = new Audio(click2);
+    this.timer = 0;
+    this.audio = new Audio(tick);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleBpmChange = event => {
     const bpm = event.target.value;
-    this.setState({ bpm });
+
+    if(this.state.playing){
+      clearInterval(this.timer);
+      this.timer = setInterval(this.playClick, (60 / bpm) * 1000);
+
+      this.setState({
+        count: 0,
+        bpm
+      });
+    } else {
+      this.setState({ bpm });
+    }
+  }
+
+  handleClick() {
+    if(this.state.playing){
+      clearInterval(this.timer);
+      this.setState({
+        playing: false
+      });
+    } else{
+      this.timer = setInterval(this.playClick, (60 / this.state.bpm) * 1000);
+      this.setState({
+        count: 0,
+        playing: true
+      }, this.playClick);
+    }
+
+  }
+
+  playClick () {
+    //const{count, beatsPerMeasure} = this.state;
+
+    const audio = new Audio(tick);
+    audio.play();
+
+    // this.setState({
+    //   count: (this.count+1) % this.beatsPerMeasure
+    // });
   }
 
   render() {
@@ -39,8 +76,8 @@ class Metronome extends Component {
             value={bpm}
             onChange={this.handleBpmChange} />
         </div>
-        <button>
-          {playing ? 'Stop' : 'Start'}
+        <button onClick={this.handleClick}>
+          {this.state.playing ? 'Stop' : 'Start'}
         </button>
       </div>
     );
