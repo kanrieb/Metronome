@@ -19,3 +19,31 @@
   color: #fff;
   font-size: 18px;
 }
+
+.circle {
+  height: 35px;
+  width: 35px;
+  border: 3px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.filled{
+  height: 35px;
+  width: 35px;
+  border: 3px solid black;
+  border-radius: 50%;
+  display: inline-block;
+
+  background-color: rgb(51, 163, 238);
+}
+
+.cell {
+  font-size: 6px;
+  margin-right: 20px; /*Add this*/  
+}
+
+.dots {
+  width: 100%;
+  padding-bottom:30px;
+}
